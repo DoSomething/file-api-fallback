@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>File API Fallback</title>
+    
+    <script src="/modernizr.js"></script>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/file-api-fallback.css"/>
+  </head>
+  
+  <body>
+    <div class="enclosure">
+        
+      <header class="header" role="banner">
+        <div class="wrapper">
+          <h1 class="header__title">Example for File API Fallback</h1>
+        </div>
+      </header>
+      
+      <main class="main" role="main">
+        <div class="container container--alpha">
+          <input class="button" type="file" />
+        </div>
+
+        <!-- <div class="container container--beta">
+          <input class="button" type="file" />
+        </div> -->
+      </main>
+
+      <footer class="footer">
+        <div class="wrapper">
+          <p class="credit">Brought to you by <a href="https://github.com/weerd">weerd</a> and <a href="http://dosomething.org">DoSomething.org</a></p>
+        </div>
+      </footer>
+
+    </div>
+    
+    <script src="/node_modules/jquery/dist/cdn/jquery.min.js"></script>
+    <script src="/FileApiFallback.js"></script>
+    <script>
+      var $button = $('.main').find('.button');
+
+      if (Modernizr.filereader) {
+        // Continue with modern browser support for File Reader API.
+        FileApiFallback.init($button, '.container');  // Temp while testing.
+      }
+      else {
+        FileApiFallback.init($button, '.container');
+      }
+    </script>
+  </body>
+
+</html>

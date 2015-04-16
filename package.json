@@ -1,0 +1,17 @@
+{
+  "name": "file-api-fallback",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Diego Lorenzo <dlorenzo@dosomething.org>",
+  "description": "Micro library to provide a suitable fallback for browsers that lack support for the HTML5 File API.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DoSomething/file-api-fallback.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DoSomething/file-api-fallback/issues"
+  },
+  "dependencies": {
+    "jquery": "^1.11.0"
+  }
+}
