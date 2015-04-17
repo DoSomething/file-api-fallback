@@ -22,16 +22,26 @@
       
       <main class="main" role="main">
         <form action=".">
-          <div class="container container--alpha">
-            <label for="example-1">Upload a file:</label>
-            <input id="example-1" class="button" type="file" />
+          <div class="example">
+            <h2>Default behavior</h2>
+            <div class="container container--alpha">
+              <label for="example-1">Upload a file:</label>
+              <input id="example-1" class="button" type="file" aria-label="file browser" />
+            </div>
+          </div>
+          
+          <hr>
+          
+          <div class="example">
+            <h2>Customized behavior if using fallback script</h2>
+            <div class="container container--beta has-fallback">
+              <label class="button">
+                <span>Upload a file</span>
+                <input id="example-2" name="" class="" type="file" aria-label="file browser">
+              </label>
+            </div>
           </div>
 
-          <!-- <div class="container container--beta">
-            <input class="button" type="file" />
-          </div> -->
-
-          <!-- <label class="button button--file -tertiary"><span>Add another photo</span><input class="js-image-upload form-file" is_supersized="" type="file" aria-label="file browser" id="edit-reportback-file" name="files[reportback_file]" size="60"></label> -->
           </form>
       </main>
 
@@ -46,15 +56,24 @@
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="src/FileApiFallback.js"></script>
     <script>
-      var $button = $('.main').find('.button');
+      var $examples = $('.example');
+      
+      $examples.each(function () {
+        var $container = $(this).find('.container'),
+            $input = $container.find('input');
 
-      if (Modernizr.filereader) {
-        // Continue with modern browser support for File Reader API.
-        // FileApiFallback.init($button, '.container');  // Temp while testing.
-      }
-      else {
-        // FileApiFallback.init($button, '.container');
-      }
+        if (!Modernizr.filereader || $container.hasClass('has-fallback')) {
+          // Using a class "has-fallback" to trigger the file api fallback 
+          // for modern browsers that do support the file api, so that it 
+          // can be demoed.
+
+          FileApiFallback.init($input, '.container');
+        }
+        else {
+          // Continue with modern browser support for File Reader API.
+        }
+      });
+
     </script>
   </body>
 
