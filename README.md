@@ -4,6 +4,8 @@ Micro library to provide a suitable fallback for browsers that lack support for 
 
 This library depends on the **jQuery** library, as well as the `file-api` non-core detect in the Modernizr library.
 
+[File API Fallback demo](http://tech.dosomething.org/file-api-fallback/).
+
 Example use:
 
 `````javascript
