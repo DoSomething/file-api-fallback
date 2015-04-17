@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <title>File API Fallback</title>
     
-    <script src="/modernizr.js"></script>
-    <link rel="stylesheet" href="/css/main.css"/>
-    <link rel="stylesheet" href="/css/file-api-fallback.css"/>
+    <script src="/src/modernizr.js"></script>
+    <link rel="stylesheet" href="/src/main.css"/>
+    <link rel="stylesheet" href="/src/file-api-fallback.css"/>
   </head>
   
   <body>
@@ -21,13 +21,18 @@
       </header>
       
       <main class="main" role="main">
-        <div class="container container--alpha">
-          <input class="button" type="file" />
-        </div>
+        <form action=".">
+          <div class="container container--alpha">
+            <label for="example-1">Upload a file:</label>
+            <input id="example-1" class="button" type="file" />
+          </div>
 
-        <!-- <div class="container container--beta">
-          <input class="button" type="file" />
-        </div> -->
+          <!-- <div class="container container--beta">
+            <input class="button" type="file" />
+          </div> -->
+
+          <!-- <label class="button button--file -tertiary"><span>Add another photo</span><input class="js-image-upload form-file" is_supersized="" type="file" aria-label="file browser" id="edit-reportback-file" name="files[reportback_file]" size="60"></label> -->
+          </form>
       </main>
 
       <footer class="footer">
@@ -39,16 +44,16 @@
     </div>
     
     <script src="/node_modules/jquery/dist/cdn/jquery.min.js"></script>
-    <script src="/FileApiFallback.js"></script>
+    <script src="/src/FileApiFallback.js"></script>
     <script>
       var $button = $('.main').find('.button');
 
       if (Modernizr.filereader) {
         // Continue with modern browser support for File Reader API.
-        FileApiFallback.init($button, '.container');  // Temp while testing.
+        // FileApiFallback.init($button, '.container');  // Temp while testing.
       }
       else {
-        FileApiFallback.init($button, '.container');
+        // FileApiFallback.init($button, '.container');
       }
     </script>
   </body>
