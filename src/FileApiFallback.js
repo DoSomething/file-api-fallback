@@ -53,13 +53,13 @@ var FileApiFallback = {
     var template = '';
     var data = {
       // 'id': this.component.id,
-      // 'classes': this.component.classes.join(' '),
+      'classes': 'button', //this.component.classes.join(' '),
       'file': this.component.fileName    
     };
 
     template += '<div class="file-selection">';
     template += '<p class="file-selection__indicator"><strong>Selected File:</strong> <span class="file-selection__name">' + data.file +'</span></p>';
-    template += '<label class="' + '' + '"><span>Change file</span></label>';
+    template += '<label class="' + data.classes + '"><span>Change file</span></label>';
     template += '</div>';
     $markup = $(template);
 

@@ -7,6 +7,7 @@
 body {
   background-color: #fff;
   font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
@@ -39,6 +40,29 @@ hr {
   margin: 0 auto;
   max-width: 80%;
   padding: 2em 1em;
+}
+
+.button {
+  background-color: #23b7fb;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1em;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #55c7fc;
+}
+
+.button:active {
+  top: 1px;
+}
+
+.custom-interface input[type="file"] {
+  display: none;
 }
 
 .footer > .wrapper {
