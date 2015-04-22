@@ -24,6 +24,7 @@
         <form action=".">
           <div class="example">
             <h2>Default browser interface</h2>
+            <p>Below is the default browser interface for a file input and how it behaves when a file is selected.</p>
             <div class="container">
               <label for="example-1">Upload a file:</label>
               <input id="example-1" type="file" aria-label="file browser" />
@@ -34,7 +35,8 @@
           
           <div class="example">
             <h2>Customized browser interface with fallback</h2>
-            <p>Using a customized interface, we can apply the fallback for browsers such as IE8 and IE9 that do not support the HTML5 File API.</p>
+            <p>When developing a more customized file input interface, we can apply a fallback for browsers, such as IE8 and IE9, that do not support the HTML5 File API.</p>
+            <p>The new fallback interface is a simple alternative that can then be styled with custom CSS and help maintain a consitent branding on the site, even if the browser does not support modern behavior.</p>
             <div class="container custom-interface has-fallback">
               <label class="button">
                 <span>Upload a file</span>
