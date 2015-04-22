@@ -11,22 +11,36 @@ This library depends on the **jQuery** library, as well as the `file-api` non-co
 
 ## Usage
 
-1. Add Modernizr to your project to feature detect whether the browser supports the HTML5 File API. Make sure to include the `file-api` non-core detect:
+Sample markup:
 
+```html
+  <form action="." method="post">
+    <div class="container">
+      <label class="button">
+        <span>Upload a file</span>
+        <input id="example" name="example" type="file" aria-label="file browser">
+      </label>
+    </div>
+  </form>
 ```
+
+
+1. Add [Modernizr](http://modernizr.com/download/) to your project to feature detect whether the browser supports the HTML5 File API. Make sure to include the `file-api` non-core detect in your custom Modernizr build:
+
+```html
   <script src="src/modernizr.js"></script>
 ```
 
-1. Include both jQuery and the File API Fallback script source on the page:
+2. Include both jQuery and the File API Fallback script source on the page:
 
-```
+```html
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="src/FileApiFallback.js"></script>
 ```
 
-1. Use jQuery to select the file input and if the `Modernizr.filereader` test fails, then pass the selected input along with name of the enclosing container to the `FileAPIFallback.init()` method:
+3. Use jQuery to select the file input and if the `Modernizr.filereader` test fails, then pass the selected input along with name of the enclosing container to the `FileApiFallback.init()` method:
 
-```
+```javascript
   var $input = $('input[type="file"]');
 
   if (Modernizr.filereader) {
@@ -40,21 +54,3 @@ This library depends on the **jQuery** library, as well as the `file-api` non-co
 
 
 
-
-
-Example use:
-
-`````javascript
-// Use jQuery to locate the file input button within a form.
-var $button = $('.button');
-
-// Next, use Modernizr to check whether the browser supports 
-// the HTML5 File API. If it does, continue with your own processing,
-// otherwise, use the FileApiFallback script.
-if (Modernizr.filereader) {
-  // Browser has support for File API, so do your thang!
-}
-else {
-  FileApiFallback.init($button, '.container');
-}
-`````
